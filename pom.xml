@@ -12,6 +12,7 @@
         <module>sk-mall</module>
         <module>sk-admin</module>
         <module>sk-common</module>
+        <module>sk-security</module>
     </modules>
 
     <properties>
@@ -62,6 +63,7 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter</artifactId>
+                <version>${springboot.starter.version}</version>
             </dependency>
             <!--添加热部署-->
             <dependency>

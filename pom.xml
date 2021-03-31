@@ -33,14 +33,17 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
+            <version>${springboot.starter.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-aop</artifactId>
+            <version>${springboot.starter.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
+            <version>${springboot.starter.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -54,6 +57,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
+            <version>${springboot.starter.version}</version>
             <optional>true</optional>
         </dependency>
     </dependencies>
@@ -69,6 +73,7 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-devtools</artifactId>
+                <version>${springboot.starter.version}</version>
                 <optional>true</optional>
             </dependency>
             <!--SpringBoot通用依赖模块-->

@@ -27,6 +27,7 @@
         <dependency>
             <groupId>com.edgar.seckill-mall</groupId>
             <artifactId>sk-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
 

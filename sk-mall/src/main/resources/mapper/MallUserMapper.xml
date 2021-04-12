@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.edgar.mall.dao.MallUserMapper">
+    <resultMap id="BaseResultMap" type="entity.User">
+        <id property="userId" column="user_id"/>
+        <result property="nickName" column="nick_name"/>
+        <result property="loginName" column="login_name"/>
+        <result property="loginPassword" column="login_password"/>
+        <result property="introduceSign" column="introduce_sign"/>
+        <result property="isDeleted" column="is_deleted"/>
+        <result property="lockedFlag" column="locked_flag"/>
+        <result property="createTime" column="create_time"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        user_id
+        ,nick_name,login_name,login_password,introduce_sign,is_deleted,locked_flag,create_time
+    </sql>
+    <insert id="register">
+        insert into tb_jmall_user
+            value(0, #{nickName}, #{loginName}, #{loginPassword}, #{introduceSign}, #{isDeleted}, #{lockedFlag}, #{createTime});
+    </insert>
+
+    <update id="updateUserByPrimaryKey">
+        update tb_jmall_user
+        set nick_name=#{nick_name},
+            login_name=#{loginName},
+            login_password=#{loginPassword} introduce_sign=#{introduceSign}
+        where user_id=#{userId}
+    </update>
+
+    <select id="getUserByLoginName" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"></include>
+        from tb_jmall_user
+        where login_name=#{loginName}
+    </select>
+    <select id="selectUserById" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"></include>
+        from tb_jmall_user
+        where user_id=#{userId}
+    </select>
+</mapper>

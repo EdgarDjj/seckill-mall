@@ -9,9 +9,45 @@ mybatis:
     - classpath:mapper/*.xml
     - classpath*:com/**/mapper/*.xml
 
-
+# 自定义jwt key
 jwt:
   tokenHeader: Authorization #JWT存储的请求头
-  secret: mall-portal-secret #JWT加解密使用的密钥
-  expiration: 604800 #JWT的超期限时间(60*60*24*7)
-  tokenHead: 'Bearer '  #JWT负载中拿到开头
+  secret: mySecret #JWT加解密使用的密钥
+  expiration: 604800 #JWT的超期限时间(60*60*24)
+  tokenHead: 'Bearer'  #JWT负载中拿到开头
+
+
+secure:
+  ignored:
+    urls: #安全路径白名单
+      - /swagger-ui.html
+      - /swagger-resources/**
+      - /swagger/**
+      - /**/v2/api-docs
+      - /**/*.js
+      - /**/*.css
+      - /**/*.png
+      - /**/*.ico
+      - /webjars/springfox-swagger-ui/**
+      - /actuator/**
+      - /home/**
+      - /product/**
+      - /brand/**
+      - /user/**
+
+
+
+# 自定义redis key
+redis:
+  database: mall
+  key:
+    authCode: 'mall-user:authCode'
+    orderId: 'mall-order:orderId'
+    user: 'mall-user:user'
+  expire:
+    authCode: 90 # 验证码超期时间
+    common: 86400 # 24小时
+
+# 验证码数目
+authcode:
+  num: 6
